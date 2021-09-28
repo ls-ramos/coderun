@@ -1,0 +1,27 @@
+service: apollo-lambda
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: sa-east-1
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+    host: 127.0.0.1
+
+functions:
+  graphql:
+    handler: graphql.graphqlHandler
+    events:
+    - http:
+        path: /
+        method: post
+        cors: true
+    - http:
+        path: /
+        method: get
+        cors: true
