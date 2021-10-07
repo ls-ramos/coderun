@@ -1,0 +1,5 @@
+# vscode config files
+.vscode/*
+
+# server node_modules
+server/node_modules
