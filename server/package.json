@@ -4,7 +4,8 @@
   "description": "Code run API",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec sls offline",
+    "dev": "nodemon node_modules/.bin/serverless offline",
+    "debug": "nodemon --inspect node_modules/.bin/serverless offline",
     "deploy": "sls deploy",
     "test": "jest"
   },
@@ -14,6 +15,7 @@
     "apollo-server-lambda": "^3.3.0",
     "axios": "^0.21.4",
     "graphql": "^15.6.0",
+    "mysql2": "^2.3.0",
     "nodemon": "^2.0.13"
   },
   "devDependencies": {
